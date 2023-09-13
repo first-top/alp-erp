@@ -1,0 +1,27 @@
+.en-present {
+  max-width: 1030px;
+  margin: 160px auto 0;
+  gap: 30px;
+  &__title {
+    max-width: 300px;
+    width: 100%;
+  }
+  &__form {
+    flex-grow: 1;
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 40px 50px;
+      input {
+        color: var(--grey-light);
+        font-size: 1.1rem;
+        font-weight: 300;
+        width: 100%;
+
+        &::placeholder {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

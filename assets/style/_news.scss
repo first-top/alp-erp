@@ -1,0 +1,144 @@
+.home-news {
+  margin-top: 100px;
+}
+.page-news {
+  margin-top: 50px;
+}
+.news {
+  &__all {
+    a {
+      color: var(--white);
+      font-size: 1.1rem;
+      text-decoration: underline;
+      font-family: var(--font-uni-sans);
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-top: 60px;
+  }
+  .digital-transform {
+    margin-top: 100px;
+    & + .news__list {
+      margin-top: 100px;
+    }
+  }
+}
+
+.news-item {
+  padding: 30px;
+  border: 1px solid var(--border-violet);
+  border-radius: 6px;
+  flex: 1;
+  min-height: 211px;
+  &__date {
+    font-size: .8rem;
+    color: var(--grey-light);
+  }
+  &__name {
+    margin-top: 20px;
+    font-family: var(--font-uni-sans);
+    font-size: 1.25rem;
+  }
+}
+
+.detail-news {
+  max-width: 770px;
+  width: 100%;
+  margin: 10px auto 0;
+  &__title {
+    h1 {
+      font-size: 2.2rem;
+      font-family: var(--font-uni-sans);
+
+    }
+  }
+  &__date {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: var(--grey-light);
+  }
+  &__picture {
+    margin-top: 50px;
+    border-radius: 6px;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__content {
+    margin-top: 30px;
+    font-weight: 300;
+    line-height: 1.5;
+    & > * + * {
+      margin-top: 30px;
+    }
+    & > * + blockquote, & > * + .border {
+      margin: 40px 0;
+    }
+    blockquote {
+      padding-left: 70px;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 36px;
+        height: 27px;
+        background-image: url(/assets/img/icons/quotes.svg);
+      }
+    }
+
+    .border {
+      padding: 30px;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 4px;
+        display: block;
+        left: 0;
+        top: 0;
+        background-color: var(--violet);
+      }
+    }
+  }
+
+  &__socials {
+    margin-top: 50px;
+    border-top: 2px solid #4d495c;
+    gap: 55px;
+    padding-top: 20px;
+  }
+
+  &__socials-links {
+    ul {
+      gap: 20px;
+    }
+    a {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: var(--violet);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg {
+        max-width: 24px;
+        width: 100%;
+        fill: var(--white);
+        max-height: 22px;
+      }
+    }
+  }
+}
+
+.news-another {
+  margin-top: 100px;
+}

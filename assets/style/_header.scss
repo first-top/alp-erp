@@ -1,0 +1,35 @@
+.header {
+  padding: 38px 0;
+  &__burger {
+    display: none;
+  }
+  &__logo {
+    max-width: 60px;
+    width: 100%;
+  }
+  &__nav {
+    ul {
+      gap: 42px;
+    }
+    a {
+      color: var(--white);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.en {
+  .header {
+    &__right {
+      gap: 85px
+    }
+    &__email {
+      a {
+        color: var(--white);
+        text-decoration: underline;
+      }
+    }
+  }
+}

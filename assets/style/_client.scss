@@ -1,0 +1,45 @@
+.client {
+  gap: 30px;
+  max-width: 1000px;
+  padding: 0 1rem;
+  width: 100%;
+  margin: 140px auto 0;
+
+  &__description,
+  &__form {
+    flex: 1;
+  }
+  &__description {
+    //max-width: 360px;
+  }
+  //&__title,
+  &__text {
+    max-width: 460px;
+  }
+  &__title {
+    max-width: 240px;
+  }
+  &__text {
+    font-size: 1.25rem;
+  }
+  &__form {
+    input {
+      width: 100%;
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+    button {
+      margin-top: 40px;
+    }
+  }
+}
+
+.contacts-page-client {
+  margin-top: 100px;
+  border-radius: 6px;
+  border: 1px solid var(--border-violet);
+  padding: 70px;
+  .client {
+    margin-top: 0;
+  }
+}

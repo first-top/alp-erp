@@ -1,0 +1,20 @@
+.input_border-bottom {
+  border: none;
+  border-bottom: 1px solid var(--grey-light);
+  color: var(--grey-light);
+  background-color: transparent;
+  padding: 15px 0;
+}
+
+.default-btn {
+  display: block;
+  padding: 23px 65px 25px;
+  border-radius: 32px;
+  border: none;
+  font-size: 1.1rem;
+  line-height: 1;
+  &_purple {
+    background-color: var(--violet);
+    color: var(--white);
+  }
+}

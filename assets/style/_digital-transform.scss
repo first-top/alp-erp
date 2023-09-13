@@ -1,0 +1,57 @@
+.digital-transform {
+  margin-top: 150px;
+  &__description {
+    margin-top: 40px;
+    max-width: 532px;
+    width: 100%;
+    font-weight: 300;
+    p + p {
+      margin-top: 20px;
+    }
+  }
+&__person {
+  margin-left: 230px;
+}
+  &__photo {
+    width: var(--circle-photo-width);
+    height: var(--circle-photo-picture-height);
+    border-radius: 0 0 calc(var(--circle-photo-width) / 2) calc(var(--circle-photo-width) / 2);
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      width: var(--circle-photo-width);
+      height: var(--circle-photo-width);
+      bottom: 0;
+
+      background-color: var(--violet);
+      border-radius: calc(var(--circle-photo-width) / 2);
+      z-index: -1;
+    }
+    img {
+      width: var(--circle-photo-picture-width);
+    }
+  }
+  &__name, &__position {
+    text-align: center;
+  }
+  &__name {
+    margin-top: 20px;
+    font-size: 1.1rem;
+  }
+  &__position {
+    margin-top: 5px;
+    font-size: .9rem;
+    color: var(--grey-light);
+  }
+  &__form {
+    margin-top: 50px;
+    input {
+      font-size: 1.1rem;
+      width: 470px;
+    }
+    button {
+      margin-top: 38px;
+    }
+  }
+}

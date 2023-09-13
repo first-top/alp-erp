@@ -1,0 +1,38 @@
+.en-offer {
+  margin-top: 140px;
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    margin-top: 50px;
+  }
+  &__item {
+    padding-left: 50px;
+    position: relative;
+  }
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 3px;
+    left: 15px;
+    max-width: 18px;
+    width: 100%;
+    svg {
+      fill: var(--violet);
+      width: 100%;
+      display: block;
+    }
+  }
+  &__name {
+    font-size: 1.2rem;
+    font-family: var(--font-uni-sans);
+    & + p {
+      margin-top: 10px;
+    }
+    p {
+      font-weight: 300;
+    }
+  }
+}

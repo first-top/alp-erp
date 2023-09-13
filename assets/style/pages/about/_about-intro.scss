@@ -1,0 +1,42 @@
+.about-intro {
+  margin-top: 10px;
+
+  &__content {
+    margin-top: 50px;
+    gap: 30px;
+  }
+  &__description {
+    max-width: 570px;
+    width: 100%;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--grey-light);
+  }
+  &__item {
+    gap: 33px;
+    & + & {
+      margin-top: 35px;
+    }
+  }
+  &__icon {
+    max-width: 25px;
+    width: 100px;
+    flex-shrink: 0;
+    svg {
+      display: block;
+      width: 100%;
+      fill: var(--violet)
+    }
+  }
+  &__text {
+    font-size: 1.5rem;
+    font-family: var(--font-uni-sans);
+    color: var(--white);
+  }
+  &__subtext {
+    font-size: 1rem;
+    font-weight: 300;
+    display: block;
+    color: var(--grey-light)
+  }
+}

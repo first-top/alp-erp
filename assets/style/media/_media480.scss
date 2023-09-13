@@ -1,0 +1,76 @@
+@media (max-width: 480px) {
+  .projects-item {
+    &__logo {
+      display: none;
+    }
+  }
+  .footer {
+    &__top {
+      flex-direction: column;
+      gap: 30px;
+    }
+    &__nav {
+      order: 2;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      text-align: center;
+      ul {
+        flex-direction: column;
+        a {
+          font-size: 1.1rem;
+        }
+      }
+    }
+    &__contacts {
+      order: 3;
+      flex-direction: column;
+      text-align: center;
+      gap: 15px;
+    }
+    &__bottom {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+    &__policy {
+      margin-left: 0;
+    }
+  }
+  .about-intro {
+    &__content {
+      margin-top: 35px;
+    }
+  }
+  .industries {
+    &__items {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  .contacts-page-client {
+    padding: 15px;
+    .client {
+      padding: 0;
+    }
+  }
+
+  .contacts {
+    &__row {
+      justify-content: center;
+    }
+    &__links {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .en-present{
+    &__form {
+      form {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}

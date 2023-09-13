@@ -1,0 +1,32 @@
+.contacts-block {
+  margin-top: 100px;
+  &__text, &__doc {
+    flex: 1;
+  }
+  &__content {
+    margin-top: 40px;
+    gap: 15px;
+  }
+  &__link {
+    margin-top: 20px;
+    a {
+      color: var(--white);
+      font-size: 1.1rem;
+      font-family: var(--font-uni-sans);
+    }
+  }
+  &__doc a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 16px 25px;
+    max-width: 300px;
+    width: 100%;
+    svg {
+      max-width: 30px;
+      fill: var(--white);
+    }
+  }
+}

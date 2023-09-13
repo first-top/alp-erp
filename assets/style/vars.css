@@ -1,0 +1,24 @@
+:root {
+  --white: #fff;
+  --grey-light: #cdd1e4;
+  --border-violet: #61488f;
+  --shadow-violet: #7545f9;
+  --violet: #4a21aa;
+  --blue: #2067fb;
+  --blue-dark: #034393;
+  --aqua: #1a89c1;
+  --yellow: #f8ae07;
+  --green: #23a842;
+  --bg: #191226;
+  --container: 1170px;
+  --circle-photo-width: 276px;
+  --circle-photo-picture-height: 310px;
+  --circle-photo-picture-width: 250px;
+  --font-size: 16px;
+  --font-ubuntu: "ubuntu", sans-serif;
+  --font-uni-sans: "uniSans", sans-serif;
+  --font-rubik: "rubik", sans-serif;
+  --toggle-menu-time: .3s ;
+}
+
+/*# sourceMappingURL=vars.css.map */

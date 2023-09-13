@@ -1,0 +1,101 @@
+@media (max-width: 1024px) {
+  body, html {
+    font-size: 14px;
+  }
+
+  .header {
+    &__logo {
+      max-width: 50px;
+    }
+  }
+
+  .digital-transform {
+    margin-top: 70px;
+    gap: 20px;
+    justify-content: space-between;
+
+    &__person {
+      margin-left: 0;
+    }
+
+    &__form {
+      input {
+        max-width: 470px;
+        width: 100%;
+      }
+    }
+  }
+
+  .projects {
+    flex-direction: column;
+    gap: 30px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    &__static {
+      display: flex;
+      justify-content: space-between;
+      flex-basis: auto;
+    }
+
+    &__actions {
+      margin-top: 0;
+    }
+
+    &__slider {
+      width: 100%;
+    }
+  }
+
+  .projects-item {
+    &__logo {
+      margin-right: 0;
+    }
+  }
+
+  .footer {
+    &__top {
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    &__nav {
+      margin-left: 0;
+    }
+
+    &__right {
+      max-width: 350px;
+    }
+
+    &__contacts {
+      margin-left: 0;
+    }
+
+    &__mail {
+      margin-right: 0;
+    }
+  }
+
+  .industries {
+    &__item {
+      padding: 20px 15px;
+    }
+  }
+  .client {
+    margin-top: 100px;
+  }
+
+  .en-intro{
+    &__head {
+      margin-top: 20px;
+    }
+    &__body {
+      margin-top: 70px;
+      align-items: flex-start;
+    }
+    &__form {
+      padding: 25px 35px;
+      max-width: 400px;
+    }
+  }
+}
