@@ -142,7 +142,7 @@ const bgPicture = {
 }
 
 
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector('.projects__slider')) {
     const projects = new Swiper('.projects__slider', {
       loop: true,
