@@ -120,6 +120,9 @@
   .header__burger span:nth-child(2) {
     top: 9px;
   }
+  .header__burger.menu-opening {
+    pointer-events: none;
+  }
   .header__burger.menu-opening span {
     top: calc(50% - 1px);
   }
@@ -144,6 +147,9 @@
   }
   .header__burger.menu-opened span:nth-child(2) {
     display: none;
+  }
+  .header__burger.menu-closed {
+    pointer-events: none;
   }
   .header__burger.menu-closed span {
     position: absolute;
@@ -185,32 +191,27 @@
   .header__lang {
     order: 3;
   }
-  .wrapper:not(.en) .header__body {
+  .header__body {
     justify-content: center;
   }
-  .wrapper:not(.en) .header__burger {
+  .header__burger {
     position: absolute;
     left: 1rem;
   }
-  .wrapper:not(.en) .header__lang {
+  .header__lang {
     position: absolute;
     right: 1rem;
     top: 64px;
   }
-  .en .header__logo {
-    order: 1;
+  .header__mobile-email {
+    display: block;
   }
-  .en .header__burger {
+  .en .header__email {
     display: none;
   }
-  .en .header__nav {
-    position: static;
-    opacity: 1;
-    order: 2;
-  }
-  .en .header__right {
-    order: 3;
-    gap: 25px;
+  .en .header__lang {
+    display: flex;
+    gap: 20px;
   }
   .home-intro__items {
     flex-direction: column;
@@ -402,52 +403,31 @@
     align-items: center;
     justify-content: center;
   }
-  .en .header__body {
-    flex-wrap: wrap;
-  }
-  .en .header__logo {
-    order: 1;
-    position: relative;
-    top: 23px;
-  }
-  .en .header__burger {
-    display: none;
-  }
-  .en .header__nav {
-    position: static;
-    opacity: 1;
-    order: 3;
-    width: 100%;
-  }
-  .en .header__nav ul {
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-  .en .header__right {
-    order: 2;
-    gap: 25px;
-  }
-  .wrapper:not(.en) .header__lang {
-    left: calc(50% - 10px);
+  .header__lang {
     top: 0;
     z-index: -1;
     opacity: 0;
+    right: auto;
+    text-align: center;
   }
-  .wrapper:not(.en) .header__lang.mobile-show {
+  .header__lang.mobile-show {
     opacity: 1;
     z-index: 1;
   }
-  .wrapper:not(.en) .header__lang.menu-opening {
+  .header__lang.menu-opening {
     animation: navShowMenu var(--toggle-menu-time) linear 0.5s 1;
   }
-  .wrapper:not(.en) .header__lang.menu-opened {
+  .header__lang.menu-opened {
     opacity: 1;
     z-index: 1;
   }
-  .wrapper:not(.en) .header__lang.menu-closed {
+  .header__lang.menu-closed {
     animation: navHideMenu var(--toggle-menu-time) linear 0s 1;
     opacity: 0;
     z-index: -1;
+  }
+  .en .header__lang {
+    flex-direction: column;
   }
   .detail-news__socials {
     flex-direction: column;

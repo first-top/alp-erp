@@ -37,7 +37,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 11px;
+    height: 9px;
     border-radius: 0 0 6px 6px;
   }
 
@@ -100,6 +100,7 @@
   &__body {
     margin-top: 140px;
     gap: 40px;
+    justify-content: space-between;
   }
 
   &__description {

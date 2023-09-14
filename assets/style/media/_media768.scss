@@ -1,11 +1,13 @@
 @media (max-width: 768px) {
   main {
     z-index: 1;
+
     &.menu-opened {
       animation: mainShowMenu var(--toggle-menu-time) linear 0s 1;
       opacity: 0;
       z-index: -1;
     }
+
     &.menu-closed {
       opacity: 0;
       z-index: -1;
@@ -16,6 +18,7 @@
     &__logo {
       order: 2;
     }
+
     &__burger {
       order: 1;
       //display: flex;
@@ -36,12 +39,15 @@
         transition: transform .5s linear, top .3s linear;
         //
         position: absolute;
+
         &:first-child {
           top: 0;
         }
+
         &:last-child {
           top: 18px;
         }
+
         &:nth-child(2) {
           top: 9px
         }
@@ -49,60 +55,77 @@
 
       &.menu-opening {
         //justify-content: center;
+        pointer-events: none;
         span {
           //position: absolute;
           top: calc(50% - 1px);
 
         }
+
         span:first-child {
           transform: rotate(45deg)
         }
+
         span:last-child {
           transform: rotate(-45deg)
         }
+
         span:nth-child(2) {
           display: none;
         }
+
         //animation: navShowMenu var(--toggle-menu-time) linear 0.5s 1;
 
       }
+
       &.menu-opened {
         //justify-content: center;
         span {
           position: absolute;
           top: calc(50% - 1px);
         }
+
         span:first-child {
           transform: rotate(45deg)
         }
+
         span:last-child {
           transform: rotate(-45deg)
         }
+
         span:nth-child(2) {
           display: none;
         }
+
         //opacity: 1;
         //z-index: 1;
       }
+
       &.menu-closed {
+        pointer-events: none;
         span {
           position: absolute;
           top: calc(50% - 1px);
         }
+
         span:first-child {
           transform: rotate(0)
         }
+
         span:last-child {
           transform: rotate(0)
         }
+
         span:nth-child(2) {
           display: none;
         }
+
         //animation: navHideMenu var(--toggle-menu-time) linear 0s 1;
         //opacity: 0;
         //z-index: -1;
       }
     }
+
     &__nav {
       position: fixed;
       bottom: 0;
@@ -110,60 +133,62 @@
       right: 0;
       z-index: -1;
       opacity: 0;
+
       &.menu-opening {
         animation: navShowMenu var(--toggle-menu-time) linear 0.5s 1;
+
       }
+
       &.menu-opened {
         opacity: 1;
         z-index: 1;
       }
+
       &.menu-closed {
 
         animation: navHideMenu var(--toggle-menu-time) linear 0s 1;
         opacity: 0;
         z-index: -1;
       }
+
       ul {
         justify-content: center;
         gap: 20px;
       }
     }
+
     &__lang {
       order: 3;
     }
-  }
-  .wrapper:not(.en) {
-    .header {
-      &__body {
-        justify-content: center;
-      }
-      &__burger {
-        position: absolute;
-        left: 1rem;
-      }
-      &__lang {
-        position: absolute;
-        right: 1rem;
-        top: 64px;
-      }
+
+    &__body {
+      justify-content: center;
+    }
+
+    &__burger {
+      position: absolute;
+      left: 1rem;
+    }
+
+    &__lang {
+      position: absolute;
+      right: 1rem;
+      top: 64px;
+    }
+
+    &__mobile-email {
+      display: block;
     }
   }
   .en {
     .header {
-      &__logo {
-        order: 1;
-      }
-      &__burger {
+      &__email {
         display: none;
       }
-      &__nav {
-        position: static;
-        opacity: 1;
-        order: 2;
-      }
-      &__right {
-        order: 3;
-        gap: 25px;
+
+      &__lang {
+        display: flex;
+        gap: 20px;
       }
     }
   }
@@ -185,11 +210,13 @@
   .digital-transform {
     flex-direction: column;
     align-items: center;
+
     &__form {
       button {
         margin: 30px auto 0;
       }
     }
+
     &__person {
       margin-top: 30px;
     }
@@ -209,29 +236,36 @@
   }
   .footer {
     margin-top: 140px;
+
     &__top {
       flex-wrap: wrap;
     }
+
     &__right {
       max-width: none;
       width: auto;
     }
+
     &__logo {
       order: 1
     }
+
     &__nav {
       order: 3;
       width: 100%;
       gap: 15px;
+
       ul {
         display: flex;
         gap: 15px;
         flex-wrap: wrap;
+
         li + li {
           margin-top: 0;
         }
       }
     }
+
     &__contacts {
       order: 2;
     }
@@ -241,12 +275,15 @@
       &__top {
         flex-wrap: wrap;
       }
+
       &__logo {
         order: 1
       }
+
       &__contacts {
         order: 2
       }
+
       &__copy {
         order: 3;
         width: 100%;
@@ -259,6 +296,7 @@
     &__content {
       flex-direction: column;
     }
+
     &__description {
       max-width: none;
     }
@@ -269,6 +307,7 @@
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 20px;
     }
+
     &__item {
       padding: 20px 15px;
     }
@@ -277,17 +316,21 @@
   .client {
     flex-direction: column;
     text-align: center;
+
     &__title, &__text {
       max-width: none;
     }
+
     &__text {
       p {
         max-width: none;
       }
     }
+
     form {
       max-width: 480px;
       margin: 0 auto;
+
       button {
         margin: 40px auto 0;
       }
@@ -300,17 +343,21 @@
       display: flex;
       justify-content: center;
     }
+
     &__text {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
       p {
         text-align: center;
       }
     }
+
     &__doc {
       margin-top: 15px;
     }
+
     &__content {
       flex-direction: column;
       align-items: center;
@@ -325,14 +372,17 @@
     &__row {
       flex-wrap: wrap;
     }
+
     &__content {
       flex-direction: column;
       gap: 20px;
       align-items: stretch;
     }
+
     &__data-block {
       max-width: none;
     }
+
     &__tabs {
       ul {
         gap: 15px;
@@ -340,31 +390,38 @@
     }
   }
 
-  .en-intro{
+  .en-intro {
     &__body {
       flex-direction: column;
     }
+
     &__description {
       max-width: none;
     }
+
     &__form {
       padding: 25px 35px;
       max-width: none;
+
       form {
         max-width: 300px;
         margin: 20px auto 0;
       }
     }
+
     &__form-description {
       max-width: none;
     }
+
     &__items {
       margin-top: 70px;
       grid-template-columns: repeat(2, 1fr);
     }
+
     &__item {
       gap: 20px;
     }
+
     &__item-icon {
       width: 60px;
       height: 60px;
@@ -374,9 +431,11 @@
   .en-present {
     flex-direction: column;
     margin-top: 70px;
+
     &__title {
       max-width: none;
     }
+
     &__form {
       form {
         grid-gap: 20px 25px;

@@ -364,9 +364,15 @@ body {
 .header__nav a:hover {
   text-decoration: underline;
 }
-.header__lang:hover {
+.header__lang a {
+  color: var(--white);
+}
+.header__lang a:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+.header__mobile-email {
+  display: none;
 }
 
 .en .header__right {
@@ -609,7 +615,7 @@ body {
   top: 7px;
   width: 36px;
   height: 27px;
-  background-image: url(/assets/img/icons/quotes.svg);
+  background-image: url(../img/icons/quotes.svg);
 }
 .detail-news__content .border {
   padding: 30px;
@@ -800,6 +806,7 @@ body {
   color: var(--white);
   font-size: 1.1rem;
   font-family: var(--font-uni-sans);
+  text-decoration: underline;
 }
 .contacts-block__link a:hover {
   text-decoration: underline;
@@ -1120,7 +1127,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 11px;
+  height: 9px;
   border-radius: 0 0 6px 6px;
 }
 .home-intro-item_blue::after {
@@ -1159,6 +1166,7 @@ body {
 .en-intro__body {
   margin-top: 140px;
   gap: 40px;
+  justify-content: space-between;
 }
 .en-intro__description {
   margin-top: 40px;
