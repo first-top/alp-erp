@@ -1,7 +1,7 @@
 .modal {
   position: fixed;
   inset: 0;
-  background-color: rgba(0,0,0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: -50;
   //display: none;
   display: flex;
@@ -9,7 +9,13 @@
   transform-origin: center center;
   transition: transform 1s, opacity .5s;
   opacity: 0;
+  padding: 10px;
   //transform: translateY(-100%);
+  &.modal-scroll {
+    overflow: auto;
+    align-items: flex-start;
+  }
+
   .modal__body {
     transform: scale(0);
     transform-origin: center center;
@@ -137,6 +143,7 @@
     max-width: 330px;
     //margin-bottom: 2rem;
     width: 100%;
+
     & + & {
       margin-top: 15px;
     }
@@ -161,6 +168,7 @@
 
   &__btn {
     margin-top: 40px;
+
     .btn {
       width: 100%;
       border: none;
@@ -182,26 +190,37 @@
   //align-items: flex-start;
   padding-top: 1rem;
   padding-bottom: 1rem;
+
   .modal {
     &__body {
       overflow: hidden;
-      background: linear-gradient(to right, var(--item-gr-light), var(--item-gr-dark));
+      //background: linear-gradient(to right, var(--item-gr-light), var(--item-gr-dark));
       color: white;
       //padding-top: 355px;
       //background-repeat: no-repeat;
-      background-size: 105%;
+      //background-size: 105%;
       max-width: 770px;
       //background-position: -10px -10px;
       //background-color: transparent;
       //max-height: 100vh;
       //overflow: auto;
-      padding: 0;
+      //padding: 0;
     }
 
     &__content {
-      padding: 0 6rem 2.5rem;
+      //padding: 0 6rem 2.5rem;
     }
 
+    &__title {
+      font-family: var(--font-uni-sans);
+    }
+
+    &__description {
+      color: var(--grey-light);
+      font-weight: 300;
+      margin-top: 20px;
+
+    }
 
 
     &__picture {
@@ -242,8 +261,10 @@
   }
 
   ul {
+    margin-top: 15px;
+
     li {
-      font-size: 14px;
+      //font-size: 14px;
       padding-left: 40px;
       position: relative;
 
@@ -252,7 +273,7 @@
         display: inline-block;
         width: 20px;
         height: 1px;
-        background-color: var(--btn-bg);
+        background-color: var(--violet);
         top: 9px;
         position: absolute;
         left: 0;

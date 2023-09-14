@@ -10,18 +10,18 @@ class Modal {
         this.modalOpen = document.querySelector(".modal-open-requisites")
         this.modal = document.querySelector(".modal.modal-requisites")
         break
-    //   case "automation":
-    //     this.modalOpen = document.querySelector(".automation-open")
-    //     this.modal = document.querySelector(".modal.modal-automation")
-    //     break
-    //   case "outsourcing":
-    //     this.modalOpen = document.querySelector(".outsourcing-open")
-    //     this.modal = document.querySelector(".modal.modal-outsourcing")
-    //     break
-    //   case "digital":
-    //     this.modalOpen = document.querySelector(".digital-open")
-    //     this.modal = document.querySelector(".modal.modal-digital")
-    //     break
+      case "automation":
+        this.modalOpen = document.querySelector(".modal-open-automation")
+        this.modal = document.querySelector(".modal.modal-automation")
+        break
+      case "services":
+        this.modalOpen = document.querySelector(".modal-open-services")
+        this.modal = document.querySelector(".modal.modal-services")
+        break
+      case "innovation":
+        this.modalOpen = document.querySelector(".modal-open-innovation")
+        this.modal = document.querySelector(".modal.modal-innovation")
+        break
     }
     this.init()
   }
@@ -34,7 +34,9 @@ class Modal {
     setTimeout(() => {
       _this.modal.classList.remove("opening")
       _this.modal.classList.add("opened")
+      this.setModalCardScroll()
     }, 1000)
+
 
     // setTimeout(() => {
     //   _this.modal.classList.add("opened")
@@ -85,13 +87,42 @@ class Modal {
 
   addListeners() {
     this.modalOpen.addEventListener("click", this.showModalBind)
+    window.addEventListener("resize", this.setModalCardScrollBind)
+  }
+
+  setModalCardScroll() {
+    if (!this.modal.classList.contains("opened")) return
+    const modalBody = this.modal.querySelector(".modal__body")
+    // console.log(modalBody)
+    const styles = getComputedStyle(this.modal)
+    const paddingTop =
+      +styles
+        .getPropertyValue("padding-top")
+        .replace(/\D/g, "")
+    const paddingBottom =
+      +styles
+        .getPropertyValue("padding-bottom")
+        .replace(/\D/g, "")
+    const modalHeight = Math.max(modalBody.clientHeight, modalBody.scrollHeight) + paddingBottom + paddingTop
+
+    console.log(modalHeight)
+    if (modalHeight > window.innerHeight) {
+      this.modal.classList.add("modal-scroll")
+    } else {
+      this.modal.classList.remove("modal-scroll")
+    }
+    // console.log(styles)
+    // console.log(paddingTop)
+    // console.log(paddingBottom)
   }
 
   init(type) {
     if (this.modalOpen && this.modal) {
       this.closeModalBind = this.closeModal.bind(this)
       this.showModalBind = this.showModal.bind(this)
+      this.setModalCardScrollBind = this.setModalCardScroll.bind(this)
       this.addListeners()
+
     }
   }
 }

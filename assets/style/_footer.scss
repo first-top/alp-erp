@@ -13,6 +13,9 @@
     a {
       font-weight: 300;
       color: var(--white);
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
   &__right {
@@ -30,6 +33,9 @@
       font-family: var(--font-uni-sans);
       font-weight: 600;
       color: var(--white);
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
   &__mail {
@@ -54,6 +60,9 @@
     a {
       color: var(--white);
       font-weight: 300;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

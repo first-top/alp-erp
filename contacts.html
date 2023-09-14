@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="wrapper p-r">
-  <div class="bg-picture homepage">
+  <div class="bg-picture">
     <img src="assets/img/bg.png" alt="bg">
   </div>
   <div class="content">
@@ -58,7 +58,8 @@
                 <a class="contacts__email" href="mailto:info@alp-erp.ru">info@alp-erp.ru</a>
               </div>
               <div class="contacts__modal-open">
-                <a href="javascript:void(0)" class="modal-open-requisites default-btn default-btn_purple">
+                <a href="javascript:void(0)"
+                   class="shadow-hover-purple modal-open-requisites default-btn default-btn_purple">
                   Заказать реквизиты
                 </a>
               </div>
@@ -74,7 +75,7 @@
               <div class="contacts__tabs-indicator"></div>
             </div>
             <div class="contacts__content-wrapper">
-              <div class="contacts__content show d-f ai-c" data-content-id="1">
+              <div class="contacts__content show d-f" data-content-id="1">
                 <div class="contacts__data">
                   <div class="contacts__data-block">
                     <div class="contacts__data-name">
@@ -98,13 +99,13 @@
                   <div class="contacts__data-block">
                     <div class="contacts__data-name">
                       <p>
-                        Центральный офис, Москва
+                        Дополнительный офис ДКИС
                       </p>
                     </div>
                     <div class="contacts__data-address">
                       <p>
                         123022, г. Москва, 2-ая Звенигородская, дом.13,
-                        корпус 41, 7 этаж
+                        корпус 41, 9 этаж
                       </p>
                     </div>
                     <div class="contacts__data-phone">
@@ -117,17 +118,17 @@
                 </div>
                 <div class="contacts__map">
                   <div style="position:relative;overflow:hidden;">
-<!--                    <a-->
-<!--                      href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"-->
-<!--                      style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a-->
-<!--                      href="https://yandex.ru/maps/213/moscow/?ll=37.604936%2C55.741258&utm_medium=mapframe&utm_source=maps&z=10.86"-->
-<!--                      style="color:#eee;font-size:12px;position:absolute;top:14px;">Москва — Яндекс Карты</a>-->
+                    <!--                    <a-->
+                    <!--                      href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"-->
+                    <!--                      style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a-->
+                    <!--                      href="https://yandex.ru/maps/213/moscow/?ll=37.604936%2C55.741258&utm_medium=mapframe&utm_source=maps&z=10.86"-->
+                    <!--                      style="color:#eee;font-size:12px;position:absolute;top:14px;">Москва — Яндекс Карты</a>-->
                     <iframe src="https://yandex.ru/map-widget/v1/?ll=37.604936%2C55.741258&z=10.86" width="570"
                             height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
                   </div>
                 </div>
               </div>
-              <div class="contacts__content d-f ai-c" data-content-id="2">
+              <div class="contacts__content d-f" data-content-id="2">
                 <div class="contacts__data">
                   <div class="contacts__data-block">
                     <div class="contacts__data-name">
@@ -160,7 +161,7 @@
                   </div>
                 </div>
               </div>
-              <div class="contacts__content d-f ai-c" data-content-id="3">
+              <div class="contacts__content d-f" data-content-id="3">
                 <div class="contacts__data">
                   <div class="contacts__data-block">
                     <div class="contacts__data-name">
@@ -220,7 +221,7 @@
                          placeholder="Номер телефона"
                   >
                 </label>
-                <button class="default-btn default-btn_purple">Заказать звонок</button>
+                <button class="shadow-hover-purple default-btn default-btn_purple">Заказать звонок</button>
               </form>
             </div>
           </div>
@@ -268,7 +269,7 @@
     </div>
   </footer>
 
-  <div class="modal en-ver modal-requisites d-f ai-c jc-c">
+  <div class="modal modal-requisites d-f ai-c jc-c">
     <div class="modal__body">
       <div class="modal__close">
         <span></span>
@@ -310,11 +311,17 @@
     </div>
   </div>
 
-    <script src="https://cdn.jsdelivr.net/gh/koles1ko/mask@1.0.3/dist/PhoneMask.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/koles1ko/mask@1.0.3/dist/PhoneMask.js"></script>
   <script src="assets/scripts/vendor/swiper-bundle.min.js"></script>
   <script src="assets/scripts/Modal.js"></script>
   <script src="assets/scripts/Tabs.js"></script>
   <script src="assets/scripts/script.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const tabs = new Tabs()
+    })
+
+  </script>
 </div>
 </body>
 </html>

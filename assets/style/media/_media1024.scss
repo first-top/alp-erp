@@ -99,3 +99,10 @@
     }
   }
 }
+
+@media (max-height: 550px) {
+  .modal {
+    overflow: auto;
+    align-items: flex-start;
+  }
+}

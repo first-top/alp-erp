@@ -38,6 +38,35 @@
       }
     }
   }
+  .wrapper:not(.en) {
+    .header {
+      &__lang {
+
+        left: calc(50% - 10px);
+        top: 0;
+        z-index: -1;
+        opacity: 0;
+        &.mobile-show {
+          opacity: 1;
+          z-index: 1;
+        }
+        &.menu-opening {
+          animation: navShowMenu var(--toggle-menu-time) linear 0.5s 1;
+        }
+        &.menu-opened {
+          opacity: 1;
+          z-index: 1;
+        }
+        &.menu-closed {
+
+          animation: navHideMenu var(--toggle-menu-time) linear 0s 1;
+          opacity: 0;
+          z-index: -1;
+        }
+      }
+
+    }
+  }
   .detail-news {
     &__socials {
       flex-direction: column;

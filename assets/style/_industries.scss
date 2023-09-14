@@ -35,4 +35,8 @@
       fill: var(--white);
     }
   }
+  &__name {
+    font-family: var(--font-uni-sans);
+    font-size: 1.3rem;
+  }
 }

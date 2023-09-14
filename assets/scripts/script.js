@@ -7,13 +7,14 @@ const headerNav = {
   isOpen: false,
   timeValue: 200,
   regExp: new RegExp("\D", "g"),
+  langNode: document.querySelector(".wrapper:not(.en) .header__lang"),
   setHandlers: function() {
     this.burger.addEventListener("click", this.toggleBind)
 
   },
   windowClickHandler: function() {
-    this.isOpen = !this.isOpen
-    this.hide()
+      this.isOpen = false
+      this.hide()
   },
   /**
    * Закрываем меню по нажатию на Esc
@@ -45,12 +46,18 @@ const headerNav = {
     const _this = this
     _this.main.classList.add("menu-opened")
     _this.nav.classList.add("menu-opening")
+    _this.burger.classList.add("menu-opening")
+    _this.langNode.classList.add("menu-opening")
     setTimeout(function() {
       _this.nav.classList.remove("menu-opening")
+      _this.langNode.classList.remove("menu-opening")
+      _this.burger.classList.remove("menu-opening")
       _this.nav.classList.add("menu-opened")
+      _this.burger.classList.add("menu-opened")
+      _this.langNode.classList.add("menu-opened")
       window.addEventListener("click", _this.windowClickHandlerBind)
       window.addEventListener("keyup", _this.windowKeyHandlerBind)
-
+      _this.setLangNodePosition()
     }, _this.timeValue * 2)
 
   },
@@ -58,19 +65,39 @@ const headerNav = {
     const _this = this
     _this.main.classList.remove("menu-opened")
     _this.nav.classList.remove("menu-opened")
+    _this.langNode.classList.remove("menu-opened")
+    _this.burger.classList.remove("menu-opened")
     _this.main.classList.add("menu-closed")
+    _this.burger.classList.add("menu-closed")
     _this.nav.classList.add("menu-closed")
+    _this.langNode.classList.add("menu-closed")
     setTimeout(function() {
       _this.main.classList.remove("menu-closed")
       _this.nav.classList.remove("menu-closed")
+      _this.burger.classList.remove("menu-closed")
+      _this.langNode.classList.remove("menu-closed")
+      _this.hideLangNode()
       window.removeEventListener("click", _this.windowClickHandlerBind)
       window.removeEventListener("keyup", _this.windowKeyHandlerBind)
     }, _this.timeValue * 2)
 
   },
   toggle: function() {
+    console.log(this.isOpen)
     this.isOpen = !this.isOpen
     this.isOpen ? this.show() : this.hide()
+  },
+  setLangNodePosition: function() {
+    if (window.innerWidth > 550) {
+      // this.langNode.style.top = "64px"
+      return
+    }
+    const list = this.nav.querySelector("ul")
+    this.langNode.style.top = `${this.header.clientHeight + list.clientHeight + 20}px`
+    // console.log(list)
+  },
+  hideLangNode: function() {
+    this.langNode.classList.remove("mobile-show")
   },
   init: function() {
     this.setTimeValue()
@@ -79,6 +106,12 @@ const headerNav = {
     this.windowKeyHandlerBind = this.windowKeyHandler.bind(this)
     this.setTopPosition()
     this.setHandlers()
+    const _this = this
+    window.addEventListener("resize", function() {
+      if (_this.langNode && window.innerWidth > 550) {
+        _this.langNode.style.top = "64px"
+      }
+    })
   }
 }
 
@@ -130,8 +163,11 @@ window.addEventListener("load", () => {
 
   headerNav.init()
   bgPicture.init()
-  const tabs = new Tabs()
+
   new Modal("requisites")
+  new Modal("automation")
+  new Modal("services")
+  new Modal("innovation")
   new PhoneMask({})
 })
 

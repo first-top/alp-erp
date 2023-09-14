@@ -18,6 +18,12 @@
       }
     }
   }
+  &__lang {
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
 }
 
 .en {

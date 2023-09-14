@@ -18,17 +18,89 @@
     }
     &__burger {
       order: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
+      //display: flex;
+      display: block;
+      //flex-direction: column;
+      //gap: 7px;
       max-width: 30px;
       width: 100%;
       cursor: pointer;
+      height: 20px;
+      //justify-content: space-between;
       span {
         width: 100%;
         background-color: var(--white);
         border-radius: 2px;
         height: 2px;
+        transform-origin: center center;
+        transition: transform .5s linear, top .3s linear;
+        //
+        position: absolute;
+        &:first-child {
+          top: 0;
+        }
+        &:last-child {
+          top: 18px;
+        }
+        &:nth-child(2) {
+          top: 9px
+        }
+      }
+
+      &.menu-opening {
+        //justify-content: center;
+        span {
+          //position: absolute;
+          top: calc(50% - 1px);
+
+        }
+        span:first-child {
+          transform: rotate(45deg)
+        }
+        span:last-child {
+          transform: rotate(-45deg)
+        }
+        span:nth-child(2) {
+          display: none;
+        }
+        //animation: navShowMenu var(--toggle-menu-time) linear 0.5s 1;
+
+      }
+      &.menu-opened {
+        //justify-content: center;
+        span {
+          position: absolute;
+          top: calc(50% - 1px);
+        }
+        span:first-child {
+          transform: rotate(45deg)
+        }
+        span:last-child {
+          transform: rotate(-45deg)
+        }
+        span:nth-child(2) {
+          display: none;
+        }
+        //opacity: 1;
+        //z-index: 1;
+      }
+      &.menu-closed {
+        span {
+          position: absolute;
+          top: calc(50% - 1px);
+        }
+        span:first-child {
+          transform: rotate(0)
+        }
+        span:last-child {
+          transform: rotate(0)
+        }
+        span:nth-child(2) {
+          display: none;
+        }
+        //animation: navHideMenu var(--toggle-menu-time) linear 0s 1;
+        //opacity: 0;
+        //z-index: -1;
       }
     }
     &__nav {
@@ -60,6 +132,22 @@
       order: 3;
     }
   }
+  .wrapper:not(.en) {
+    .header {
+      &__body {
+        justify-content: center;
+      }
+      &__burger {
+        position: absolute;
+        left: 1rem;
+      }
+      &__lang {
+        position: absolute;
+        right: 1rem;
+        top: 64px;
+      }
+    }
+  }
   .en {
     .header {
       &__logo {
@@ -82,6 +170,7 @@
   .home-intro {
     &__items {
       flex-direction: column;
+      grid-template-columns: repeat(1, 1fr);
     }
   }
   .home-intro-item {
@@ -191,6 +280,11 @@
     &__title, &__text {
       max-width: none;
     }
+    &__text {
+      p {
+        max-width: none;
+      }
+    }
     form {
       max-width: 480px;
       margin: 0 auto;
@@ -290,5 +384,10 @@
     }
   }
 
+  .modal {
+    &__body {
+      padding: 20px 40px;
+    }
+  }
 
 }
