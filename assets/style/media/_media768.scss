@@ -157,8 +157,12 @@
       }
     }
 
-    &__lang {
+    &__right {
       order: 3;
+      position: absolute;
+      right: 1rem;
+      top: 64px;
+      gap: 20px;
     }
 
     &__body {
@@ -171,9 +175,7 @@
     }
 
     &__lang {
-      position: absolute;
-      right: 1rem;
-      top: 64px;
+
     }
 
     &__mobile-email {
@@ -183,12 +185,12 @@
   .en {
     .header {
       &__email {
-        display: none;
+        //display: none;
       }
 
       &__lang {
-        display: flex;
-        gap: 20px;
+        //display: flex;
+        //gap: 20px;
       }
     }
   }

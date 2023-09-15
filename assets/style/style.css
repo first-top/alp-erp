@@ -364,6 +364,12 @@ body {
 .header__nav a:hover {
   text-decoration: underline;
 }
+.header__mobile-buttons {
+  display: none;
+}
+.header__right {
+  gap: 85px;
+}
 .header__lang a {
   color: var(--white);
 }
@@ -375,9 +381,6 @@ body {
   display: none;
 }
 
-.en .header__right {
-  gap: 85px;
-}
 .en .header__email a {
   color: var(--white);
   text-decoration: underline;

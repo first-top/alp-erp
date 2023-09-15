@@ -50,17 +50,17 @@ const headerNav = {
     _this.footer.classList.add("menu-opened")
     _this.nav.classList.add("menu-opening")
     _this.burger.classList.add("menu-opening")
-    _this.langNode.classList.add("menu-opening")
+    // _this.langNode.classList.add("menu-opening")
     setTimeout(function () {
       _this.nav.classList.remove("menu-opening")
       _this.langNode.classList.remove("menu-opening")
       _this.burger.classList.remove("menu-opening")
       _this.nav.classList.add("menu-opened")
       _this.burger.classList.add("menu-opened")
-      _this.langNode.classList.add("menu-opened")
+      // _this.langNode.classList.add("menu-opened")
       window.addEventListener("click", _this.windowClickHandlerBind)
       window.addEventListener("keyup", _this.windowKeyHandlerBind)
-      _this.setLangNodePosition()
+      // _this.setLangNodePosition()
     }, _this.timeValue * 2)
 
   },
@@ -69,20 +69,20 @@ const headerNav = {
     _this.main.classList.remove("menu-opened")
     _this.footer.classList.remove("menu-opened")
     _this.nav.classList.remove("menu-opened")
-    _this.langNode.classList.remove("menu-opened")
+    // _this.langNode.classList.remove("menu-opened")
     _this.burger.classList.remove("menu-opened")
     _this.main.classList.add("menu-closed")
     _this.footer.classList.add("menu-closed")
     _this.burger.classList.add("menu-closed")
     _this.nav.classList.add("menu-closed")
-    _this.langNode.classList.add("menu-closed")
+    // _this.langNode.classList.add("menu-closed")
     setTimeout(function () {
       _this.main.classList.remove("menu-closed")
       _this.footer.classList.remove("menu-closed")
       _this.nav.classList.remove("menu-closed")
       _this.burger.classList.remove("menu-closed")
-      _this.langNode.classList.remove("menu-closed")
-      _this.hideLangNode()
+      // _this.langNode.classList.remove("menu-closed")
+      // _this.hideLangNode()
       window.removeEventListener("click", _this.windowClickHandlerBind)
       window.removeEventListener("keyup", _this.windowKeyHandlerBind)
     }, _this.timeValue * 2)
@@ -125,12 +125,12 @@ const headerNav = {
     const _this = this
     window.addEventListener("resize", function () {
       if (_this.langNode) {
-        if (window.innerWidth > 550) {
-          _this.langNode.style.left = "auto"
-          _this.langNode.style.top = "64px"
-        } else {
-          _this.setLangNodePosition()
-        }
+        // if (window.innerWidth > 550) {
+        //   _this.langNode.style.left = "auto"
+        //   _this.langNode.style.top = "64px"
+        // } else {
+        //   _this.setLangNodePosition()
+        // }
       }
       if (window.innerWidth > 768 && _this.isOpen) {
         _this.isOpen = false
@@ -139,7 +139,7 @@ const headerNav = {
     })
     window.addEventListener("scroll", (e) => {
       if (_this.isOpen) {
-        _this.setLangNodePosition(e)
+        // _this.setLangNodePosition(e)
       }
     })
   }

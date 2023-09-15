@@ -18,6 +18,12 @@
       }
     }
   }
+  &__mobile-buttons {
+    display: none;
+  }
+  &__right {
+    gap: 85px;
+  }
   &__lang {
     a {
       color: var(--white);
@@ -36,7 +42,7 @@
 .en {
   .header {
     &__right {
-      gap: 85px
+      //gap: 85px
     }
     &__email {
       a {
