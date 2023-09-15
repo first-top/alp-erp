@@ -78,15 +78,15 @@
   }
 }
 @media (max-width: 768px) {
-  main {
+  main, footer {
     z-index: 1;
   }
-  main.menu-opened {
+  main.menu-opened, footer.menu-opened {
     animation: mainShowMenu var(--toggle-menu-time) linear 0s 1;
     opacity: 0;
     z-index: -1;
   }
-  main.menu-closed {
+  main.menu-closed, footer.menu-closed {
     opacity: 0;
     z-index: -1;
     animation: mainHideMenu var(--toggle-menu-time) linear 0.5s 1;

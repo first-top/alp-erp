@@ -3,6 +3,7 @@ const headerNav = {
   nav: document.querySelector("header.header .header__nav"),
   burger: document.querySelector("header.header .header__burger"),
   main: document.querySelector("main"),
+  footer: document.querySelector("footer.footer"),
   body: document.querySelector("body"),
   isOpen: false,
   timeValue: 200,
@@ -25,14 +26,14 @@ const headerNav = {
       this.hide()
     }
   },
-  /*
+  /**
   * Выставляет верхнюю точку меню навигации в мобилках
   * */
   setTopPosition: function () {
     this.nav.style.top = `${this.header.clientHeight}px`
 
   },
-  /*
+  /**
   * Получаем значение переменной в которой хранится время анимации меню в мобилках
   * */
   setTimeValue: function () {
@@ -46,6 +47,7 @@ const headerNav = {
   show: function () {
     const _this = this
     _this.main.classList.add("menu-opened")
+    _this.footer.classList.add("menu-opened")
     _this.nav.classList.add("menu-opening")
     _this.burger.classList.add("menu-opening")
     _this.langNode.classList.add("menu-opening")
@@ -65,15 +67,18 @@ const headerNav = {
   hide: function () {
     const _this = this
     _this.main.classList.remove("menu-opened")
+    _this.footer.classList.remove("menu-opened")
     _this.nav.classList.remove("menu-opened")
     _this.langNode.classList.remove("menu-opened")
     _this.burger.classList.remove("menu-opened")
     _this.main.classList.add("menu-closed")
+    _this.footer.classList.add("menu-closed")
     _this.burger.classList.add("menu-closed")
     _this.nav.classList.add("menu-closed")
     _this.langNode.classList.add("menu-closed")
     setTimeout(function () {
       _this.main.classList.remove("menu-closed")
+      _this.footer.classList.remove("menu-closed")
       _this.nav.classList.remove("menu-closed")
       _this.burger.classList.remove("menu-closed")
       _this.langNode.classList.remove("menu-closed")
@@ -87,13 +92,24 @@ const headerNav = {
     this.isOpen = !this.isOpen
     this.isOpen ? this.show() : this.hide()
   },
-  setLangNodePosition: function () {
+  setLangNodePosition: function (e) {
     if (window.innerWidth > 550) {
 
       return
     }
     const list = this.nav.querySelector("ul")
-    this.langNode.style.top = `${this.header.clientHeight + list.clientHeight + 20}px`
+    const listRect = list.getBoundingClientRect()
+    let positionTop = listRect.bottom
+    const type = e?.type
+    console.log(positionTop)
+
+    if (type && type.toLowerCase() === "scroll") {
+      const bodyTop = this.body.getBoundingClientRect().y
+      positionTop += Math.abs(bodyTop)
+      console.log(positionTop)
+    }
+
+    this.langNode.style.top = `${positionTop + 20}px`
     this.langNode.style.left = `calc(50% - ${this.langNode.clientWidth / 2}px)`
   },
   hideLangNode: function () {
@@ -113,13 +129,17 @@ const headerNav = {
           _this.langNode.style.left = "auto"
           _this.langNode.style.top = "64px"
         } else {
-          _this.langNode.style.top = `${_this.header.clientHeight + _this.nav.querySelector("ul").clientHeight + 20}px`
-          _this.langNode.style.left = `calc(50% - ${_this.langNode.clientWidth / 2}px)`
+          _this.setLangNodePosition()
         }
       }
       if (window.innerWidth > 768 && _this.isOpen) {
         _this.isOpen = false
         _this.hide()
+      }
+    })
+    window.addEventListener("scroll", (e) => {
+      if (_this.isOpen) {
+        _this.setLangNodePosition(e)
       }
     })
   }
