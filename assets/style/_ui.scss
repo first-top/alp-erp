@@ -1,4 +1,4 @@
-.input_border-bottom {
+.input_border-bottom, .textarea_border-bottom {
   border: none;
   border-bottom: 1px solid var(--grey-light);
   color: var(--grey-light);
@@ -9,6 +9,11 @@
   &::placeholder {
     opacity: 1;
   }
+}
+
+.textarea_border-bottom {
+  width: 100%;
+  resize: none;
 }
 
 .default-btn {
@@ -23,3 +28,30 @@
     color: var(--white);
   }
 }
+
+.input-file {
+  position: relative;
+  width: max-content;
+  cursor: pointer;
+  input {
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+  }
+  svg {
+    fill: var(--white);
+    width: 100%;
+    display: block;
+  }
+  &__attach {
+    width: 18px;
+    display: block;
+  }
+  &_empty, &_loaded {
+    gap: 20px;
+  }
+  &_loaded {
+    display: none;
+  }
+}
+

@@ -1,0 +1,48 @@
+.js-spoiler {
+  &__head {
+    cursor: pointer;
+    gap: 15px;
+  }
+  &__icon {
+    border: 1px solid var(--border-violet);
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    position: relative;
+    flex-shrink: 0;
+    span {
+      height: 2px;
+      width: 24px;
+      display: block;
+      background-color: var(--white);
+      position: absolute;
+      left: calc(50% - 12px);
+      top: calc(50% - 1px);
+      transition: opacity .5s linear;
+      &:last-child {
+        transform-origin: center center;
+        transform: rotate(90deg);
+      }
+    }
+  }
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s linear;
+  }
+  &__item {
+    &.opened {
+      .js-spoiler {
+        &__icon {
+          span {
+            opacity: 0;
+          }
+        }
+        &__content {
+          max-height: none;
+        }
+      }
+    }
+  }
+}
+

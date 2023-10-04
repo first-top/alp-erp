@@ -15,6 +15,10 @@ class Tabs {
   }
 
   clickHandler({target}) {
+    this.wrapper = target.closest(".js-tab-wrapper")
+    this.tabContent = this.wrapper.querySelectorAll("[data-content-id]")
+    this.indicator = this.wrapper.querySelector(".js-tab__indicator")
+
     const id = target.getAttribute("data-tab-id")
     const current = [...this.tabContent].filter(c => c.getAttribute("data-content-id") === id)[0]
     const prevCurrent = [...this.tabContent].filter(c => c.classList.contains("show"))[0]
@@ -35,9 +39,10 @@ class Tabs {
   init() {
     this.tabLinks = document.querySelectorAll("[data-tab-id]")
     if (this.tabLinks.length) {
-      this.wrapper = this.tabLinks[0].closest(".js-tab-wrapper")
-      this.tabContent = this.wrapper.querySelectorAll("[data-content-id]")
-      this.indicator = this.wrapper.querySelector(".contacts__tabs-indicator")
+      // this.wrapper = this.tabLinks[0].closest(".js-tab-wrapper")
+      // this.tabContent = this.wrapper.querySelectorAll("[data-content-id]")
+      // this.indicator = this.wrapper.querySelector(".js-tab__indicator")
+      // this.indicator = this.wrapper.querySelector(".contacts__tabs-indicator")
       this.clickHandlerBind = this.clickHandler.bind(this)
       this.addHandlers()
     }

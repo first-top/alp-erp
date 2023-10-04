@@ -279,11 +279,20 @@
     width: 100%;
     text-align: center;
   }
-  .about-intro__content {
+  .about-intro__content, .vacancies-intro__content {
     flex-direction: column;
   }
-  .about-intro__description {
+  .about-intro__description, .vacancies-intro__description {
     max-width: none;
+  }
+  .vacancies {
+    margin-top: 50px;
+  }
+  .vacancies__list {
+    margin-top: 25px;
+  }
+  .vacancies-item {
+    padding: 15px 20px;
   }
   .industries__items {
     grid-template-columns: repeat(2, 1fr);
@@ -420,6 +429,9 @@
   .en-offer__items {
     grid-template-columns: repeat(1, 1fr);
   }
+  .vacancies-form__fields {
+    grid-template-areas: "name" "phone" "e-mail" "message" "file";
+  }
 }
 @media (max-width: 480px) {
   .projects-item__logo {
@@ -458,8 +470,21 @@
   .footer__policy {
     margin-left: 0;
   }
-  .about-intro__content {
+  .about-intro__content, .vacancies-intro__content {
     margin-top: 35px;
+  }
+  .vacancies-form__footer {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .vacancies-form__policy {
+    text-align: center;
+  }
+  .js-tab__head ul {
+    gap: 15px;
+  }
+  .js-tab__head li {
+    font-size: 1rem;
   }
   .industries__items {
     grid-template-columns: repeat(1, 1fr);

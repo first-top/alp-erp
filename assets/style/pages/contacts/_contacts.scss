@@ -26,18 +26,18 @@
     margin-top: 100px;
   }
   &__tabs {
-    padding-bottom: 15px;
-    border-bottom: 3px solid rgba(205, 209, 228, 0.29);
-    position: relative;
-    ul {
-      gap: 30px;
-    }
-    li {
-      cursor: pointer;
-    }
-    li.current {
-      pointer-events: none;
-    }
+    //padding-bottom: 15px;
+    //border-bottom: 3px solid rgba(205, 209, 228, 0.29);
+    //position: relative;
+    //ul {
+    //  gap: 30px;
+    //}
+    //li {
+    //  cursor: pointer;
+    //}
+    //li.current {
+    //  pointer-events: none;
+    //}
   }
 
   &__tabs-indicator {
@@ -71,10 +71,10 @@
     }
   }
   &__content {
-    display: none;
-    &.show {
-      display: flex;
-    }
+    //display: none;
+    //&.show {
+    //  display: flex;
+    //}
   }
   &__data-name {
     font-family: var(--font-uni-sans);

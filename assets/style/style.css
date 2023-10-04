@@ -319,7 +319,7 @@ body {
   white-space: nowrap;
 }
 
-.input_border-bottom {
+.input_border-bottom, .textarea_border-bottom {
   border: none;
   border-bottom: 1px solid var(--grey-light);
   color: var(--grey-light);
@@ -328,8 +328,13 @@ body {
   font-size: 1.1rem;
   font-weight: 300;
 }
-.input_border-bottom::placeholder {
+.input_border-bottom::placeholder, .textarea_border-bottom::placeholder {
   opacity: 1;
+}
+
+.textarea_border-bottom {
+  width: 100%;
+  resize: none;
 }
 
 .default-btn {
@@ -343,6 +348,32 @@ body {
 .default-btn_purple {
   background-color: var(--violet);
   color: var(--white);
+}
+
+.input-file {
+  position: relative;
+  width: max-content;
+  cursor: pointer;
+}
+.input-file input {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+}
+.input-file svg {
+  fill: var(--white);
+  width: 100%;
+  display: block;
+}
+.input-file__attach {
+  width: 18px;
+  display: block;
+}
+.input-file_empty, .input-file_loaded {
+  gap: 20px;
+}
+.input-file_loaded {
+  display: none;
 }
 
 .header {
@@ -1098,6 +1129,75 @@ body {
   opacity: 1;
 }
 
+.js-tab__head {
+  padding-bottom: 15px;
+  border-bottom: 3px solid rgba(205, 209, 228, 0.29);
+  position: relative;
+}
+.js-tab__head ul {
+  gap: 30px;
+  display: flex;
+}
+.js-tab__head li {
+  cursor: pointer;
+}
+.js-tab__head li.current {
+  pointer-events: none;
+}
+.js-tab__indicator {
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 3px;
+  width: 64px;
+  background-color: var(--violet);
+  transition: left 0.5s linear;
+}
+.js-tab__content {
+  display: none;
+}
+.js-tab__content.show {
+  display: flex;
+}
+
+.js-spoiler__head {
+  cursor: pointer;
+  gap: 15px;
+}
+.js-spoiler__icon {
+  border: 1px solid var(--border-violet);
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  position: relative;
+  flex-shrink: 0;
+}
+.js-spoiler__icon span {
+  height: 2px;
+  width: 24px;
+  display: block;
+  background-color: var(--white);
+  position: absolute;
+  left: calc(50% - 12px);
+  top: calc(50% - 1px);
+  transition: opacity 0.5s linear;
+}
+.js-spoiler__icon span:last-child {
+  transform-origin: center center;
+  transform: rotate(90deg);
+}
+.js-spoiler__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s linear;
+}
+.js-spoiler__item.opened .js-spoiler__icon span {
+  opacity: 0;
+}
+.js-spoiler__item.opened .js-spoiler__content {
+  max-height: none;
+}
+
 .home-intro {
   margin-top: 10px;
 }
@@ -1247,14 +1347,14 @@ body {
   font-weight: 400;
 }
 
-.about-intro {
+.about-intro, .vacancies-intro {
   margin-top: 10px;
 }
-.about-intro__content {
+.about-intro__content, .vacancies-intro__content {
   margin-top: 50px;
   gap: 30px;
 }
-.about-intro__description {
+.about-intro__description, .vacancies-intro__description {
   max-width: 570px;
   font-weight: 300;
   width: 100%;
@@ -1262,28 +1362,28 @@ body {
   line-height: 1.8;
   color: var(--grey-light);
 }
-.about-intro__item {
+.about-intro__item, .vacancies-intro__item {
   gap: 33px;
 }
-.about-intro__item + .about-intro__item {
+.about-intro__item + .about-intro__item, .about-intro__item + .vacancies-intro__item, .vacancies-intro__item + .about-intro__item, .vacancies-intro__item + .vacancies-intro__item {
   margin-top: 35px;
 }
-.about-intro__icon {
+.about-intro__icon, .vacancies-intro__icon {
   max-width: 25px;
   width: 100px;
   flex-shrink: 0;
 }
-.about-intro__icon svg {
+.about-intro__icon svg, .vacancies-intro__icon svg {
   display: block;
   width: 100%;
   fill: var(--violet);
 }
-.about-intro__text {
+.about-intro__text, .vacancies-intro__text {
   font-size: 1.5rem;
   font-family: var(--font-uni-sans);
   color: var(--white);
 }
-.about-intro__subtext {
+.about-intro__subtext, .vacancies-intro__subtext {
   font-size: 1rem;
   font-weight: 300;
   display: block;
@@ -1318,20 +1418,6 @@ body {
 .contacts__info {
   margin-top: 100px;
 }
-.contacts__tabs {
-  padding-bottom: 15px;
-  border-bottom: 3px solid rgba(205, 209, 228, 0.29);
-  position: relative;
-}
-.contacts__tabs ul {
-  gap: 30px;
-}
-.contacts__tabs li {
-  cursor: pointer;
-}
-.contacts__tabs li.current {
-  pointer-events: none;
-}
 .contacts__tabs-indicator {
   position: absolute;
   left: 0;
@@ -1355,12 +1441,6 @@ body {
 }
 .contacts__data-block + .contacts__data-block {
   margin-top: 40px;
-}
-.contacts__content {
-  display: none;
-}
-.contacts__content.show {
-  display: flex;
 }
 .contacts__data-name {
   font-family: var(--font-uni-sans);
@@ -1387,6 +1467,124 @@ body {
 }
 .contacts__data-phone a, .contacts__data-email a {
   color: var(--white);
+}
+
+.vacancies {
+  margin-top: 110px;
+}
+.vacancies__list {
+  margin-top: 45px;
+}
+
+.vacancies-item {
+  border: 1px solid var(--border-violet);
+  border-radius: 12px;
+  padding: 35px 30px;
+}
+.vacancies-item + .vacancies-item {
+  margin-top: 20px;
+}
+.vacancies-item__name {
+  font-family: var(--font-uni-sans);
+  font-size: 1.5rem;
+}
+.vacancies-item__place {
+  font-weight: 300;
+  margin-top: 5px;
+}
+.vacancies-item__tabs {
+  padding-top: 35px;
+}
+
+.vacancies-item-tabs__head {
+  font-size: 1.25rem;
+  font-family: var(--font-uni-sans);
+}
+.vacancies-item-tabs__content-item {
+  padding-top: 40px;
+}
+.vacancies-item-tabs__content-item ul {
+  padding-left: 35px;
+  position: relative;
+}
+.vacancies-item-tabs__content-item ul::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 21px;
+  height: 2px;
+  background-color: var(--violet);
+  left: 0;
+  top: 10px;
+}
+.vacancies-item-tabs__content-item ul li {
+  font-weight: 300;
+}
+.vacancies-item-tabs__content-item ul li + li {
+  margin-top: 12px;
+}
+.vacancies-item-tabs__content {
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(205, 209, 228, 0.29);
+}
+
+.vacancies-form {
+  padding-top: 35px;
+}
+.vacancies-form__title {
+  font-size: 1.5rem;
+  font-family: var(--font-uni-sans);
+}
+.vacancies-form__description {
+  font-weight: 300;
+  margin-top: 5px;
+}
+.vacancies-form form {
+  margin-top: 20px;
+}
+.vacancies-form__fields {
+  display: grid;
+  grid-template-areas: "name phone e-mail" "message message message" "file file file";
+  grid-gap: 25px;
+}
+.vacancies-form__fields label:nth-child(1) {
+  grid-area: name;
+}
+.vacancies-form__fields label:nth-child(2) {
+  grid-area: phone;
+}
+.vacancies-form__fields label:nth-child(3) {
+  grid-area: e-mail;
+}
+.vacancies-form__fields label:nth-child(4) {
+  grid-area: message;
+}
+.vacancies-form__fields label input {
+  width: 100%;
+}
+.vacancies-form__fields .vacancies-form__file {
+  grid-area: file;
+}
+.vacancies-form__footer {
+  gap: 50px;
+  margin-top: 35px;
+}
+.vacancies-form__button {
+  max-width: 330px;
+  width: 100%;
+}
+.vacancies-form__button button {
+  width: 100%;
+}
+.vacancies-form__policy {
+  font-size: 0.8rem;
+  color: var(--grey-light);
+  font-weight: 300;
+}
+.vacancies-form__policy a {
+  font-size: 0.8rem;
+  color: var(--white);
+  font-weight: 500;
 }
 
 .footer {

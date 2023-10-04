@@ -39,9 +39,28 @@
       margin-left: 0;
     }
   }
-  .about-intro {
+  .about-intro, .vacancies-intro {
     &__content {
       margin-top: 35px;
+    }
+  }
+  .vacancies-form {
+    &__footer {
+      flex-direction: column;
+      gap: 25px;
+    }
+    &__policy {
+      text-align: center;
+    }
+  }
+  .js-tab {
+    &__head {
+      ul {
+        gap: 15px;
+      }
+      li {
+        font-size: 1rem;
+      }
     }
   }
   .industries {

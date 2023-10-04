@@ -75,4 +75,14 @@
       grid-template-columns: repeat(1, 1fr);
     }
   }
+  .vacancies-form {
+    &__fields {
+      grid-template-areas:
+    "name"
+    "phone"
+    "e-mail"
+    "message"
+    "file";
+    }
+  }
 }

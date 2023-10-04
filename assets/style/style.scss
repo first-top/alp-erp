@@ -14,6 +14,8 @@
 @import "modal";
 @import "offer";
 @import "present";
+@import "tabs";
+@import "spoiler";
 
 // home
 @import "home-intro";
@@ -23,6 +25,9 @@
 
 //contacts
 @import "pages/contacts/contacts";
+
+//vacancies
+@import "pages/vacancies/vacancies";
 
 
 @import "footer";

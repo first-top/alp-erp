@@ -294,7 +294,7 @@
     }
   }
 
-  .about-intro {
+  .about-intro, .vacancies-intro {
     &__content {
       flex-direction: column;
     }
@@ -302,6 +302,17 @@
     &__description {
       max-width: none;
     }
+  }
+
+  .vacancies {
+    margin-top: 50px;
+    &__list {
+      margin-top: 25px;
+    }
+  }
+
+  .vacancies-item {
+    padding: 15px 20px;
   }
 
   .industries {
