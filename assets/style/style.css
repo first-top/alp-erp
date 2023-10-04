@@ -1194,10 +1194,6 @@ body {
 .js-spoiler__item.opened .js-spoiler__icon span {
   opacity: 0;
 }
-.js-spoiler__item.opened .js-spoiler__content {
-  max-height: none;
-}
-
 .home-intro {
   margin-top: 10px;
 }
