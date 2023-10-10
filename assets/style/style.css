@@ -359,6 +359,8 @@ body {
   opacity: 0;
   position: absolute;
   inset: 0;
+  cursor: pointer;
+  z-index: -1;
 }
 .input-file svg {
   fill: var(--white);
@@ -371,6 +373,7 @@ body {
 }
 .input-file_empty, .input-file_loaded {
   gap: 20px;
+  cursor: pointer;
 }
 .input-file_loaded {
   display: none;
@@ -1475,7 +1478,10 @@ body {
 .vacancies-item {
   border: 1px solid var(--border-violet);
   border-radius: 12px;
-  padding: 35px 30px;
+  padding: 36px 0 18px;
+}
+.vacancies-item__head {
+  padding: 0 30px;
 }
 .vacancies-item + .vacancies-item {
   margin-top: 20px;
@@ -1490,6 +1496,9 @@ body {
 }
 .vacancies-item__tabs {
   padding-top: 35px;
+}
+.vacancies-item__content {
+  padding: 0 30px 18px;
 }
 
 .vacancies-item-tabs__head {
@@ -1569,7 +1578,7 @@ body {
   max-width: 330px;
   width: 100%;
 }
-.vacancies-form__button button {
+.vacancies-form__button button, .vacancies-form__button input {
   width: 100%;
 }
 .vacancies-form__policy {
@@ -1584,18 +1593,22 @@ body {
 }
 
 .footer {
-  margin-top: 210px;
+  margin-top: 110px;
+}
+.footer__top {
+  gap: 20px;
+  justify-content: space-between;
 }
 .footer__logo {
   max-width: 60px;
   width: 100%;
 }
 .footer__nav {
-  margin-left: 140px;
-  gap: 80px;
+  gap: 20px;
 }
-.footer__nav li + li {
-  margin-top: 20px;
+.footer__nav ul {
+  display: flex;
+  gap: 20px;
 }
 .footer__nav a {
   font-weight: 300;
@@ -1605,12 +1618,11 @@ body {
   text-decoration: underline;
 }
 .footer__right {
-  max-width: 470px;
-  width: 100%;
+  width: max-content;
 }
 .footer__contacts {
   gap: 50px;
-  margin-left: auto;
+  flex-shrink: 0;
 }
 .footer__phone a {
   font-size: 1.5rem;
@@ -1620,9 +1632,6 @@ body {
 }
 .footer__phone a:hover {
   text-decoration: underline;
-}
-.footer__mail {
-  margin-right: 70px;
 }
 .footer__mail a {
   font-size: 1.1rem;

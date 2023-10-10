@@ -255,7 +255,8 @@
     &__nav {
       order: 3;
       width: 100%;
-      gap: 15px;
+      //gap: 15px;
+      flex-direction: row;
 
       ul {
         display: flex;

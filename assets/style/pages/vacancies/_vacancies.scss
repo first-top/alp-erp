@@ -8,7 +8,10 @@
 .vacancies-item {
   border: 1px solid var(--border-violet);
   border-radius: 12px;
-  padding: 35px 30px;
+  padding: 36px 0 18px;
+  &__head {
+    padding: 0 30px;
+  }
   & + & {
     margin-top: 20px;
   }
@@ -23,11 +26,15 @@
   &__tabs {
     padding-top: 35px;
   }
+  &__content {
+    padding: 0 30px 18px;
+  }
 }
 .vacancies-item-tabs {
   &__head {
     font-size: 1.25rem;
     font-family: var(--font-uni-sans);
+
   }
   &__content-item {
     padding-top: 40px;
@@ -55,6 +62,7 @@
 
   &__content {
     padding-bottom: 40px;
+
     border-bottom: 1px solid rgba(205, 209, 228, 0.29);
   }
 }
@@ -107,7 +115,7 @@
   &__button {
     max-width: 330px;
     width: 100%;
-    button {
+    button, input {
       width: 100%;
     }
   }

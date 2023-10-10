@@ -1,14 +1,23 @@
 .footer {
-  margin-top: 210px;
+  margin-top: 110px;
+  &__top {
+    gap: 20px;
+    justify-content: space-between;
+  }
   &__logo {
     max-width: 60px;
     width: 100%;
   }
   &__nav {
-    margin-left: 140px;
-    gap: 80px;
+    //margin-left: 140px;
+    gap: 20px;
+    //width: 100%;
+    ul {
+      display: flex;
+      gap: 20px;
+    }
     li + li {
-      margin-top: 20px;
+      //margin-top: 20px;
     }
     a {
       font-weight: 300;
@@ -19,12 +28,16 @@
     }
   }
   &__right {
-    max-width: 470px;
-    width: 100%;
+    //max-width: 470px;
+    width: max-content;
   }
   &__contacts {
     gap: 50px;
-    margin-left: auto;
+    //flex-direction: column;
+    //align-items: flex-end;
+    flex-shrink: 0;
+    //margin-left: auto;
+    //margin-left: auto;
 
   }
   &__phone {
@@ -39,7 +52,7 @@
     }
   }
   &__mail {
-    margin-right: 70px;
+    //margin-right: 70px;
     a {
       font-size: 1.1rem;
       color: var(--white);

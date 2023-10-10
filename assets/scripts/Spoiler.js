@@ -17,9 +17,12 @@ class Spoiler {
   }
 
   getContentHeight(node) {
-
+    const paddingBottom = +getComputedStyle(node).getPropertyValue("padding-bottom").replace("px", "")
+    const paddingTop = +getComputedStyle(node).getPropertyValue("padding-top").replace("px", "")
     const children = node.children
     let maxHeight = 0;
+    maxHeight += paddingBottom
+    maxHeight += paddingTop
     for(let child of children) {
       maxHeight += Math.max(child.scrollHeight, child.clientHeight)
     }

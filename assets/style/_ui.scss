@@ -37,6 +37,8 @@
     opacity: 0;
     position: absolute;
     inset: 0;
+    cursor: pointer;
+    z-index: -1;
   }
   svg {
     fill: var(--white);
@@ -49,6 +51,8 @@
   }
   &_empty, &_loaded {
     gap: 20px;
+    cursor: pointer;
+    //position: relative;
   }
   &_loaded {
     display: none;

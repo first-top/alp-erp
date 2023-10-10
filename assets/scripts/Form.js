@@ -14,16 +14,18 @@ class Form {
   }
   addHandlers() {
     for (let file of this.files) {
+      const wrapper = file.closest(`.${this.fileInputWrapperClass}`)
+      const emptyNode = wrapper.querySelector(`.${this.fileInputEmptyNodeClass}`)
+      emptyNode.addEventListener("click", function() {
+        file.click()
+      })
       file.addEventListener("change", this.fileInputHandlerBind)
       file.value = ""
     }
   }
 
-  loadedHandler() {
 
-  }
-
-  removeHandler() {
+  removeFileHandler() {
     this.currentInput.style.pointerEvents = "auto"
     this.currentInput.value = ""
     this
@@ -62,18 +64,12 @@ class Form {
     target.style.pointerEvents = "none"
     this
       .removeNode
-      .addEventListener("click", this.removeHandler.bind(this), {once: true})
-
-
-    console.log(target)
-    console.log(target.value)
-
-    console.log(file)
-
+      .addEventListener("click", this.removeFileHandler.bind(this), {once: true})
 
   }
   init() {
-    this.files = document.querySelectorAll("input[name=file]")
+    this.files = document.querySelectorAll(".input-file input[type=file]")
+
     if (this.files.length) {
       this.fileInputHandlerBind = this.fileInputHandler.bind(this)
       this.addHandlers()

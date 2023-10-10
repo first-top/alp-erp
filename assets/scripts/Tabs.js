@@ -3,7 +3,7 @@ class Tabs {
   clickHandlerBind = null
   wrapper = null
   tabContent = null
-    indicator = null
+  indicator = null
   constructor() {
     this.init()
   }
@@ -33,7 +33,7 @@ class Tabs {
     const rectTarget = node.getBoundingClientRect()
     const rectWrapper = this.wrapper.getBoundingClientRect()
     this.indicator.style.left = `${rectTarget.x - rectWrapper.x}px`
-
+    this.indicator.style.width = `${rectTarget.width}px`
   }
 
   init() {

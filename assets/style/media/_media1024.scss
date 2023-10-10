@@ -60,7 +60,8 @@
     }
 
     &__nav {
-      margin-left: 0;
+      //margin-left: 0;
+      flex-direction: column;
     }
 
     &__right {

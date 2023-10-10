@@ -42,7 +42,7 @@
     gap: 20px;
   }
   .footer__nav {
-    margin-left: 0;
+    flex-direction: column;
   }
   .footer__right {
     max-width: 350px;
@@ -252,7 +252,7 @@
   .footer__nav {
     order: 3;
     width: 100%;
-    gap: 15px;
+    flex-direction: row;
   }
   .footer__nav ul {
     display: flex;
